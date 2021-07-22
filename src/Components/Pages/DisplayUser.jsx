@@ -48,16 +48,16 @@ export default function DisplayUser() {
 
   const [state, setState] = React.useState({
     columns: [
-      { title: "ID", field: "featureid" },
-      { title: "Name", field: "Name" },
-      { title: "Email ", field: "Email" },
-      { title: "Contact No ", field: "Contact No" },
+      { title: "ID", field: "iduserdata" },
+      { title: "Name", field: "name" },
+      { title: "Email ", field: "email" },
+      { title: "Contact No ", field: "phone" },
     ],
   });
   const [getList, setList] = useState([]);
 
   const fetchData = async () => {
-    let list = await getData("Featurespackages/displayall");
+    let list = await getData("info/Displayall");
     setList(list);
   };
 

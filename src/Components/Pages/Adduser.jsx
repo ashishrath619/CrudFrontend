@@ -1,17 +1,26 @@
 import React, { useState, useEffect } from "react";
 import "./adduser.css";
+import { getData, postData, deleteDataAxios } from "../../FetchServices";
+
 export default function Adduser() {
   const [getName, setName] = useState("");
   const [getEmail, setEmail] = useState("");
   const [getPhone, setPhone] = useState("");
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     var body = {
       name: getName,
       email: getEmail,
       phone: getPhone,
     };
     console.log("datasubmit", body);
+
+    let result = await postData("info/addnewrecord", body);
+    if (result) {
+      alert("submit");
+    } else {
+      alert("failed");
+    }
   };
 
   return (
