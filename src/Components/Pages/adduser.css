@@ -1,0 +1,23 @@
+.mainContainer{
+    width: 40%;
+    border-radius: 1rem;
+    padding: 4rem;
+    background: whitesmoke;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+border: 1px solid aquamarine;
+}
+
+.bgcolor{
+    background: blueviolet;
+    height: 100vh;
+    overflow: hidden;
+}
+.outerContainer{
+    margin-top: 8rem;
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+}
