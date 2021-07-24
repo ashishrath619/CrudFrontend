@@ -43,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
     margin: "10px",
   },
 }));
-export default function DisplayUser() {
+export default function DisplayUser(props) {
   const classes = useStyles();
 
   const [state, setState] = React.useState({
@@ -67,8 +67,10 @@ export default function DisplayUser() {
   }, []);
 
   const handleDelete = async (oldData) => {
-    let body = { featureid: oldData.featureid };
-    await postData("Featurespackages/deleteData", body);
+    let body = oldData.iduserdata;
+    console.log("body");
+
+    await deleteDataAxios(`info/deleteuser/${body}`);
   };
   /*---------Dailog-------- */
   const [open, setOpen] = React.useState(false);
@@ -108,6 +110,7 @@ export default function DisplayUser() {
   };
 
   const handleClickOpen = (rowData) => {
+    props.history.push({ pathname: `/Editpage`, data: rowData });
     setOpen(true);
     setPackageid(rowData.packageid);
     setPtime(rowData.packagetime);

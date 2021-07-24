@@ -71,4 +71,23 @@ const deleteDataAxios = async (Url) => {
   }
 };
 
-export { getData, postData, postDataAndImage, deleteDataAxios, ServerURL };
+const patchDataAxios = async (Url, body) => {
+  try {
+    var url = `${ServerURL}/${Url}`;
+    const config = { "content-type": "application/json;charset=utf-8" };
+    const response = await axios.patch(url, body, config);
+    var result = response.data;
+    return result;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export {
+  getData,
+  postData,
+  postDataAndImage,
+  deleteDataAxios,
+  ServerURL,
+  patchDataAxios,
+};
